@@ -193,6 +193,12 @@ exports.randomplay = function (req, res, next) {
         req.session.score = 0;
         req.session.answered_right = [-1];}
     var answer = req.query.answer || "";
+    if(!req.session.wrong){
+        req.session.wrong = 0;
+    }
+    if (req.session.wrong === 1) {
+        req.session.score = 0;
+    }
     models.Quiz.count()
         .then(function (count) {
             return models.Quiz.findAll(
@@ -220,8 +226,9 @@ exports.randomcheck = function(req, res, next){
     var result = answer.toLowerCase().trim() === req.quiz.answer.toLowerCase().trim();
     if(result) {
         req.session.score++;
+        req.session.wrong = 0;
         req.session.answered_right.push(req.quiz.id);
-    }
+    } else {req.session.wrong = 1;}
     res.render('quizzes/random_result', {
         score: req.session.score,
         result: result,
