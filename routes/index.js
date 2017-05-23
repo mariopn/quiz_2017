@@ -13,8 +13,6 @@ router.get('/author', function(req, res, next) {
     res.render('author');
 });
 
-<<<<<<< HEAD
-
 // Autoload de rutas que usen :quizId
 router.param('quizId', quizController.load);
 
@@ -31,13 +29,17 @@ router.delete('/quizzes/:quizId(\\d+)',    quizController.destroy);
 router.get('/quizzes/:quizId(\\d+)/play',  quizController.play);
 router.get('/quizzes/:quizId(\\d+)/check', quizController.check);
 
+router.get('/quizzes/randomplay', quizController.randomplay);
+router.get('/quizzes/randomcheck/:quizId(\\d+)', quizController.randomcheck);
 
 module.exports = router;
-=======
 //Página de ayuda
 router.get('/help', function(req, res, next) {
     res.render('help');
 });
+// Página de juego aleatorio
+router.get('/quizzes/randomplay', function(req, res, next) {
+    res.render('quizzes/random_play');
+});
 
 module.exports = router;
->>>>>>> practica51

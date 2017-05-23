@@ -5,7 +5,6 @@ var paginate = require('../helpers/paginate').paginate;
 
 // Autoload el quiz asociado a :quizId
 exports.load = function (req, res, next, quizId) {
-
     models.Quiz.findById(quizId)
     .then(function (quiz) {
         if (quiz) {
@@ -176,13 +175,55 @@ exports.play = function (req, res, next) {
 
 // GET /quizzes/:quizId/check
 exports.check = function (req, res, next) {
-
     var answer = req.query.answer || "";
 
     var result = answer.toLowerCase().trim() === req.quiz.answer.toLowerCase().trim();
 
     res.render('quizzes/result', {
         quiz: req.quiz,
+        result: result,
+        answer: answer,
+        //score: score
+    });
+};
+
+//GET /quizzes/randomplay
+exports.randomplay = function (req, res, next) {
+    if(!req.session.score || !req.session.answered_right) {
+        req.session.score = 0;
+        req.session.answered_right = [-1];}
+    var answer = req.query.answer || "";
+    models.Quiz.count()
+        .then(function (count) {
+            return models.Quiz.findAll(
+                {where: {id: { $notIn: req.session.answered_right}}})
+        })
+        .then(function(not_answered){
+            if(not_answered.length == 0) {res.render('quizzes/random_nomore', {
+                score: req.session.score
+            });
+            } else{
+                var random = Math.floor(Math.random() * not_answered.length);
+                res.render('quizzes/random_play', {
+                quiz: not_answered[random],
+                answer: answer,
+                score: req.session.score
+                });
+            }
+        })
+};
+
+
+// GET /quizzes/randomcheck/:quizId?answer=respuesta
+exports.randomcheck = function(req, res, next){
+    var answer = req.query.answer || "";
+    var result = answer.toLowerCase().trim() === req.quiz.answer.toLowerCase().trim();
+    if(result) {
+        req.session.score++;
+        req.session.answered_right.push(req.quiz.id);
+    }
+    res.render('quizzes/random_result', {
+        score: req.session.score,
         result: result,
         answer: answer
     });
