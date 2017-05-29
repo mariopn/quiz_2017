@@ -16,6 +16,9 @@
   <component name="FileEditorManager">
     <leaf />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -168,7 +171,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45000" />
+    <option name="totallyTimeSpent" value="104000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="94" y="24" width="1186" height="776" extended-state="4" />
