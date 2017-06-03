@@ -14,18 +14,22 @@ exports.load = function (req, res, next, quizId) {
         ]
     })
 
-    models.Quiz.findById(quizId)
-
-    .then(function (quiz) {
-        if (quiz) {
-            req.quiz = quiz;
-            next();
-        } else {
-            throw new Error('No existe ningún quiz con id=' + quizId);
-        }
+    models.Quiz.findById(quizId, {
+        include: [
+            {model: models.Tip, include: [{model: models.User, as: 'Author'}]},
+            {model: models.User, as: 'Author'}
+        ]
     })
-    .catch(function (error) {
-        next(error);
+        .then(function (quiz) {
+            if (quiz) {
+                req.quiz = quiz;
+                next();
+            } else {
+                throw new Error('No existe ningún quiz con id=' + quizId);
+            }
+        })
+        .catch(function (error) {
+            next(error);
     });
 };
 
