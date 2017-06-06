@@ -52,6 +52,10 @@
         </entry>
       </file>
     </leaf>
+<<<<<<< HEAD
+=======
+>>>>>>> practica51
+>>>>>>> Tema23
 =======
     <leaf />
 >>>>>>> practica52
@@ -295,7 +299,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="45000" />
+=======
+    <option name="totallyTimeSpent" value="104000" />
+>>>>>>> Tema23
   </component>
   <component name="ToolWindowManager">
     <frame x="94" y="24" width="1186" height="776" extended-state="4" />
@@ -734,6 +742,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/quizzes/result.ejs">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
 =======
 >>>>>>> practica51
@@ -770,6 +779,8 @@
 >>>>>>> practica51
 =======
 >>>>>>> practica52
+=======
+>>>>>>> Tema23
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -803,11 +814,71 @@
 =======
     <entry file="file://$PROJECT_DIR$/views/quizzes/new.ejs">
       <provider selected="true" editor-type-id="text-editor">
+=======
+>>>>>>> practica51
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/views/quizzes/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-203">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+=======
+    <entry file="file://$PROJECT_DIR$/app.js">
+>>>>>>> practica51
+=======
+>>>>>>> practica52
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/views/quizzes/play.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-67">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/quizzes/show.ejs">
+<<<<<<< HEAD
+>>>>>>> practica52
+=======
+=======
+    <entry file="file://$PROJECT_DIR$/views/layout.ejs">
+=======
+    <entry file="file://$PROJECT_DIR$/views/help.ejs">
+>>>>>>> practica52
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/views/index.ejs">
+>>>>>>> practica51
+=======
+    <entry file="file://$PROJECT_DIR$/views/quizzes/new.ejs">
+>>>>>>> Tema23
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+=======
     <entry file="file://$PROJECT_DIR$/views/quizzes/index.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-203">
@@ -837,6 +908,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> Tema23
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======

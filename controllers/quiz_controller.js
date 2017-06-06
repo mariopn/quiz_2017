@@ -8,7 +8,6 @@ var paginate = require('../helpers/paginate').paginate;
 // Autoload el quiz asociado a :quizId
 exports.load = function (req, res, next, quizId) {
 
-
     models.Quiz.findById(quizId, {
         include: [
             models.Tip,
@@ -24,7 +23,6 @@ exports.load = function (req, res, next, quizId) {
 
         ]
     })
-
         .then(function (quiz) {
             if (quiz) {
                 req.quiz = quiz;
@@ -36,6 +34,24 @@ exports.load = function (req, res, next, quizId) {
         .catch(function (error) {
             next(error);
         });
+
+    models.Quiz.findById(quizId, {
+        include: [
+            {model: models.Tip, include: [{model: models.User, as: 'Author'}]},
+            {model: models.User, as: 'Author'}
+        ]
+    })
+    .then(function (quiz) {
+        if (quiz) {
+            req.quiz = quiz;
+            next();
+        } else {
+            throw new Error('No existe ningún quiz con id=' + quizId);
+        }
+    })
+    .catch(function (error) {
+        next(error);
+    });
 };
 
 
