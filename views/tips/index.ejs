@@ -3,7 +3,8 @@
     <% var tip = tips[i]; %>
     <% var accepted = tip.accepted; %>
     <% var isAdmin = session.user && session.user.isAdmin; %>
-    <% var isQuizAuthor = session.user && tip.Author && tip.Author.id &&  tip.AuthorId=== session.user.id; %>
+    <% var isTipAuthor = session.user && tip.AuthorId && tip.AuthorId=== session.user.id;%>
+    <% var isQuizAuthor = session.user && quizAuthorId && quizAuthorId=== session.user.id; %>
     <% if (accepted || isAdmin || isQuizAuthor || session.user ) { %>
     <li>
         <%= tip.text %>
@@ -13,7 +14,7 @@
             <button>Aceptar</button>
         </a>
         <% } %>
-        <% if (isAdmin || isQuizAuthor) { %>
+        <% if (isAdmin || isQuizAuthor || isTipAuthor) { %>
         <a href="/quizzes/<%= quizId %>/tips/<%= tip.id %>?_method=DELETE">
             <button>Borrar</button>
         </a>
